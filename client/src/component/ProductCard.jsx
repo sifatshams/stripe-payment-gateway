@@ -33,10 +33,23 @@ const products = [
   },
 ];
 
+import axios from 'axios';
+
 const ProductCard = () => {
-  const handleCheckout = (product) => {
-    // stripe payment API integration-এর ব্যাকএন্ডে রিকোয়েস্ট পাঠানোর কোড এখানে হবে
-    console.log('Checking out product:', product);
+  const handleCheckout = async (product) => {
+    try {
+      // stripe payment API integration
+      const data = await axios.post(
+        'http://localhost:5000/create-checkout-session',
+        {
+          product,
+        },
+      );
+      window.location.href = data.url;
+    } catch (error) {
+      console.log('Checking out product:', product);
+      console.error(error.message);
+    }
   };
 
   return (
