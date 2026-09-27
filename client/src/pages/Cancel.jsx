@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 const Cancel = () => {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4">
@@ -48,12 +50,12 @@ const Cancel = () => {
 
         {/* action buttons */}
         <div className="space-y-3">
-          <a
-            href="/"
+          <NavLink
+            to="/"
             className="block w-full bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 px-4 rounded-xl border border-slate-700 transition-all duration-200"
           >
             Try Again
-          </a>
+          </NavLink>
         </div>
       </div>
     </div>
