@@ -39,13 +39,13 @@ const ProductCard = () => {
   const handleCheckout = async (product) => {
     try {
       // stripe payment API integration
-      const data = await axios.post(
+      const res = await axios.post(
         'http://localhost:5000/create-checkout-session',
         {
           product,
         },
       );
-      window.location.href = data.url;
+      window.location.href = res.data.url;
     } catch (error) {
       console.log('Checking out product:', product);
       console.error(error.message);
