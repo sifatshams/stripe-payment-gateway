@@ -1,11 +1,10 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 const Success = () => {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center p-4">
       {/* main success card container */}
       <div className="max-w-md w-full bg-slate-900 border border-slate-800 rounded-2xl p-8 text-center shadow-2xl">
-        
         {/* animated checkmark icon */}
         <div className="w-20 h-20 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
           <svg
@@ -29,7 +28,8 @@ const Success = () => {
           Payment Successful!
         </h1>
         <p className="text-slate-400 text-sm mb-6">
-          Thank you for your purchase. Your payment was processed successfully via Stripe.
+          Thank you for your purchase. Your payment was processed successfully
+          via Stripe.
         </p>
 
         {/* payment details box */}
@@ -48,17 +48,16 @@ const Success = () => {
 
         {/* action buttons */}
         <div className="space-y-3">
-          <a
-            href="/"
+          <NavLink
+            to="/"
             className="block w-full bg-indigo-600 hover:bg-indigo-500 text-white font-medium py-3 px-4 rounded-xl shadow-lg shadow-indigo-600/20 transition-all duration-200"
           >
             Back to Home
-          </a>
+          </NavLink>
         </div>
-        
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Success;
